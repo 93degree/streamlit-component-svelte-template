@@ -18,7 +18,7 @@ A Component can be used in any Streamlit app, can pass data between Python and f
 import streamlit.components.v1 as components
 
 # Declare the component:
-my_component = components.declare_component("my_component", path="frontend/build")
+my_component = components.declare_component("my_component", path="frontend/public")
 
 # Use it:
 my_component(greeting="Hello", name="World")
