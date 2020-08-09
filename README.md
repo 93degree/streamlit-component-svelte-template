@@ -24,7 +24,20 @@ my_component = components.declare_component("my_component", path="frontend/publi
 my_component(greeting="Hello", name="World")
 ```
 
-- Build the component's frontend out of HTML and JavaScript (or TypeScript, or ClojureScript, or whatever you fancy). In this case, with Svelte.
+- Build the component's frontend out of HTML and JavaScript (or TypeScript, or ClojureScript, or whatever you fancy). In this case, with Svelte:
+
+```html
+<script lang="ts">
+  import { setStreamlitLifecycle } from "./streamlit";
+  setStreamlitLifecycle();
+
+  // Access arguments from Python
+  export let greeting: string;
+  export let name: string;
+</script>
+
+<div>{greeting}, {name}!</div>
+```
 
 ## Quickstart
 
@@ -60,7 +73,7 @@ $ streamlit run my_component/__init__.py  # run the example
 
 ## Examples
 
-For a more complex example check Fanilo Andrianasolo's [Named Entity Selection Component](https://github.com/andfanilo/streamlit-named-entity-svelte).
+- COMING SOON
 
 ## More Information
 
